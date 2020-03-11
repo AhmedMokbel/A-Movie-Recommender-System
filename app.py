@@ -36,7 +36,7 @@ def index():
     if form.validate_on_submit():
         recommender = MovieRecommenderSystem.recommender(form.name.data)
         
-        flash('Recommended Movies = ' + recommender )
+        flash('Recommended Movies = ' + str(recommender ))
         session['name'] = form.name.data
         return redirect(url_for('index'))
     return render_template('index.html', form=form, name=session.get('name'))
