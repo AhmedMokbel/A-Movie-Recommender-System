@@ -14,7 +14,7 @@ source of dataset: dataworld =>https://data.world/studentoflife/imdb-top-250-lis
 ### Web Technologies
 Flask
 ### Machine Learning Library In Python3
-Numpy , Pandas , Scikit-Learn
+Numpy , Pandas , Scikit-Learn , re , nltk
 
 
 
