@@ -2,7 +2,7 @@
 import pandas as pd
 
 #import the Data
-Data=pd.read_csv('Dataset\IMDB.csv' ,usecols=range(0,27))
+Data=pd.read_csv('./Dataset/imdb.csv' ,usecols=range(0,27))
 Data =Data[['Title','Genre','Director','Actors','Plot']]
 
 #Data cleaning
