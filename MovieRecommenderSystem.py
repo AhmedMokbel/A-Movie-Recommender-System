@@ -1,6 +1,5 @@
 #importing libraries
 import pandas as pd
-import numpy as np
 
 #import the Data
 Data=pd.read_csv('Dataset\IMDB.csv' ,usecols=range(0,27))
@@ -68,8 +67,11 @@ def recommender(title,cosine_sim=cosine_sim ) :
     recommended_Movies=[]
     
     #Getting the title movie
-    idx_title = indices[indices== title].index[0]
-
+    try:
+         idx_title = indices[indices==title].index[0]
+    except IndexError:
+          return "The movie you entered does not exist...try another one"
+      
     score_series = pd.Series(cosine_sim[idx_title]).sort_values(ascending = False)
     
     top_10_Movies = list(score_series.iloc[1:11].index)
@@ -78,9 +80,9 @@ def recommender(title,cosine_sim=cosine_sim ) :
         recommended_Movies.append(list(Data.index)[i])
         
     return recommended_Movies
-    
+   
 #test our system
-#recommender("---")
+#recommender("the godfather")
 
 
 

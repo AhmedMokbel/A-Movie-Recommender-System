@@ -33,14 +33,19 @@ def internal_server_error(e):
 @app.route('/', methods=['GET', 'POST'])
 def index():
     form = NameForm()
+    Error_message="The movie you entered does not exist...try another one"
     if form.validate_on_submit():
         recommender = MovieRecommenderSystem.recommender(form.name.data)
-        
-        flash('Recommended Movies = ' + str(recommender ))
+        if recommender== Error_message :
+           category = 'danger'
+           flash(str(recommender ) ,category)
+        else:
+           category='success'
+           flash('Recommended Movies = ' + str(recommender ) ,category)
         session['name'] = form.name.data
         return redirect(url_for('index'))
     return render_template('index.html', form=form, name=session.get('name'))
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=port)
+    app.run(debug=True,host='0.0.0.0')
