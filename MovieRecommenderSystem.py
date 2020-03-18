@@ -65,10 +65,10 @@ indices=pd.Series(Data.index)
 
 def recommender(title,cosine_sim=cosine_sim ) :
     recommended_Movies=[]
-    
+    title_lower=title.lower()
     #Getting the title movie
     try:
-         idx_title = indices[indices==title].index[0]
+         idx_title = indices[indices==title_lower].index[0]
     except IndexError:
           return "The movie you entered does not exist...try another one"
       
@@ -82,7 +82,7 @@ def recommender(title,cosine_sim=cosine_sim ) :
     return recommended_Movies
    
 #test our system
-recommender("the godfather")
+#recommender("----")
 
 
 
