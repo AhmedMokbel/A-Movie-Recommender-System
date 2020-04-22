@@ -3,7 +3,7 @@ website for movies recommendation based on content like "Genre-Director-Actors-p
 
 
 
-## Resource and Dataset Descriptions 
+## Resources and Dataset Descriptions 
 IMDB DataSet with 320 rows and 27 columns.
 
 source of dataset: dataworld =>https://data.world/studentoflife/imdb-top-250-lists-and-5000-or-so-data-records
